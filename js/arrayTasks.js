@@ -4,6 +4,23 @@ console.log("Array tasks");
 const numberArr = [11, -25, -15, 48, 16];
 const numberArr2 = [-12, 4, 6, 20, 9, 8, 5];
 const numberArr3 = [-5, -7, 13, -5, 16, 7, -16, 10];
+// for (pradine reiksme; salyga kol true tol vyksta ciklas; zigsnis kuris pakeicia index)
+
+// debugger;
+for (let index = 0; index < numberArr.length; index = index + 1) {
+  console.log("numberArr[index]", numberArr[index]);
+}
+
+numberArr.forEach(function (number) {
+  console.log("number forEach", number);
+});
+
+let grazinaMap = numberArr.map(function (number) {
+  console.log("number map", number);
+  return number;
+});
+
+console.log("grazinaMap", grazinaMap);
 
 // 1. parasyti funkcija kuri gauna 2 argumentus ir grazina masyva kuriame yra tie du argumentai
 function getArray(num1, num2) {
@@ -114,6 +131,32 @@ console.log("");
 // pasiziureti ar einama reiksme yra string ar ne string tipo
 // jei reiksmes tipas yra ne string tai pakeisti tipa i string
 // grazinta pakeista masyva
+function makeStringArrayType(arr) {
+  let stirngArr = arr.map((arrValue) => {
+    // console.log("arrValue", typeof arrValue);
+    // kai arrValue yra ne string tipo mes norim pakeisti i string ir grazinti
+    if (typeof arrValue !== "string") {
+      // paversti i string
+      return arrValue.toString();
+      return String(arrValue);
+    }
+    return arrValue;
+  });
+  let mapShort = arr.map((value) => value.toString());
+  //   console.log("stirngArr", stirngArr);
+  //   console.log("mapShort", mapShort);
+
+  return stirngArr;
+}
+// makeStringArrayType([1, 2, "a", "b"]);
+console.group("make string array");
+console.log('makeStringArrayType([1, 2, "a", "b", "false"])', makeStringArrayType([1, 2, "a", "b", false]));
+console.log(
+  'makeStringArrayType([1, 2, 3, 17, 24, 3, "a", "123b"])',
+  makeStringArrayType([1, 2, 3, 17, 24, 3, "a", "123b"])
+);
+console.groupEnd();
+console.log("");
 
 // 6. parasyti funkcija kuri pasiima 2 masyvus kaip argumentus ir sujungia juos i viena ir grazina
 // pabandyti 2 budais
