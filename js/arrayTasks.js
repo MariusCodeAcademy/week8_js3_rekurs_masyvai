@@ -215,6 +215,21 @@ console.log("");
 // ➞ ["number", "number", "string", "object"]
 // arrayValuesTypes(["214", true, false, 2, 2.15, [], null])
 // ➞ ["string", "boolean", "boolean", "number", "number", "object", "object"]
+// pasunkintas var
+[
+  {
+    value: 1,
+    type: "number",
+  },
+  {
+    value: 2,
+    type: "number",
+  },
+  {
+    value: "null",
+    type: "sring",
+  },
+];
 
 // 11 Parasyti funkcija kuri ima 2 argumentus ir grazina masyva sukurta is tarpiniu skaiciu
 // rangeOfNum(2, 4) ➞ [3]
