@@ -180,6 +180,26 @@ console.log("");
 
 // 7. funkcija kuri pasiima masyva kaip argumenta ir grazina stringa
 // [1, 2, 3, 17, 24, 3, "a", "123b"] => 12317243a123b
+console.clear();
+function arrToString(arr) {
+  // manual way
+  // susikuriam prie ko pridesim reiksmes
+  let stringFromAray = "";
+  arr.forEach((value) => (stringFromAray += value));
+  //   console.log("stringFromAray", stringFromAray);
+
+  // reduce
+  stringFromAray = arr.reduce((finalString, value) => finalString + value, "");
+  return stringFromAray;
+  // easy way
+  //   return arr.join("");
+}
+// arrToString([1, 2, 3, 17, 24, 3, "a", "123b"]);
+console.group("arrToString");
+console.log('[1, 2, 3, 17, 24, 3, "a", "123b"]', arrToString([1, 2, 3, 17, 24, 3, "a", "123b"]));
+
+console.groupEnd();
+console.log("");
 
 // 8. parasyti funkcija kuri paima masyva ir reiksme kaip argumentus ir iesko reiksmes masyve.
 // jei randa reiksme grazina indexa, jei neranda grazina -1
@@ -187,3 +207,21 @@ console.log("");
 // findMeAn([2, 3, 6, 7], 3) => 1
 // findMeAn([2, 3, 6, 7], 12) => -1
 // findMeAn([2, 3, 6, 7, 4 ,11], 7) => 3
+
+// 9 Parasyti funkcija kuri ima masyva argumentu ir grazina ar masyvo el suma yra lygine ar nelygine
+
+// 10 Parasyti funkcija kuri ima masyva argumentu ir grazina masyva su paduoto masyvo tipais
+// arrayValuesTypes([1, 2, "null", []])
+// ➞ ["number", "number", "string", "object"]
+// arrayValuesTypes(["214", true, false, 2, 2.15, [], null])
+// ➞ ["string", "boolean", "boolean", "number", "number", "object", "object"]
+
+// 11 Parasyti funkcija kuri ima 2 argumentus ir grazina masyva sukurta is tarpiniu skaiciu
+// rangeOfNum(2, 4) ➞ [3]
+// rangeOfNum(5, 9) ➞ [6, 7, 8]
+// rangeOfNum(2, 11) ➞ [3, 4, 5, 6, 7, 8, 9, 10]
+
+// 12 Parasyti funkcija kuri pasiima argumentu masyva ir susumuoja didesnes nei 5 reiksmes
+// sumFive([1, 5, 20, 30, 4, 9, 18]) ➞ 77
+// sumFive([1, 2, 3, 4]) ➞ 0
+// sumFive([10, 12, 28, 47, 55, 100]) ➞ 252

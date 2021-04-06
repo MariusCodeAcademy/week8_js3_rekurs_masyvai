@@ -16,3 +16,11 @@ console.log("treciaReiksme", treciaReiksme);
 // let firstVal = numberArr2[0]
 let [firstVal, , thrid] = numberArr2;
 console.log("pirma numberArr2, third", firstVal, thrid);
+
+// funkcija kuri atspausdina pirma ir antra masyvo reiksme
+numberArr2 = [11, -25, -15, 48, 16];
+
+function printFirstTwo([first, second]) {
+  console.log("first", first, "second", second);
+}
+printFirstTwo(numberArr2);
