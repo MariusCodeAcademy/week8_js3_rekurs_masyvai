@@ -1,9 +1,9 @@
 "use strict";
 console.log("Array tasks");
 
-const numberArr = [11, -25, -15, 48, 16];
-const numberArr2 = [-12, 4, 6, 20, 9, 8, 5];
-const numberArr3 = [-5, -7, 13, -5, 16, 7, -16, 10];
+let numberArr = [11, -25, -15, 48, 16];
+let numberArr2 = [-12, 4, 6, 20, 9, 8, 5];
+let numberArr3 = [-5, -7, 13, -5, 16, 7, -16, 10];
 // for (pradine reiksme; salyga kol true tol vyksta ciklas; zigsnis kuris pakeicia index)
 
 // debugger;
@@ -158,11 +158,28 @@ console.log(
 console.groupEnd();
 console.log("");
 
+numberArr = [11, -25, -15, 48, 16];
+numberArr2 = [-12, 4, 6, 20, 9, 8, 5];
 // 6. parasyti funkcija kuri pasiima 2 masyvus kaip argumentus ir sujungia juos i viena ir grazina
 // pabandyti 2 budais
+function joinArr(arr1, arr2) {
+  // concat() - sujungia du ir daugiau masyvu
+  let joinded = arr1.concat(arr2);
+  //  ... spread operator
+  joinded = [...arr1, ...arr2];
+  // splice
+  //   joinded = arr1.splice(arr1.length, 0, ...arr2);
+  //   console.log("joinded", joinded);
+  //   console.log("arr1", arr1);
+  return joinded;
+}
+console.group("Joined arrays");
+console.log("joinArr(numberArr, numberArr2)", joinArr(numberArr, numberArr2));
+console.groupEnd();
+console.log("");
 
 // 7. funkcija kuri pasiima masyva kaip argumenta ir grazina stringa
-// [1, 2, 3, 17, 24, 3, "a", "123b"] => 12317243"a""123b"
+// [1, 2, 3, 17, 24, 3, "a", "123b"] => 12317243a123b
 
 // 8. parasyti funkcija kuri paima masyva ir reiksme kaip argumentus ir iesko reiksmes masyve.
 // jei randa reiksme grazina indexa, jei neranda grazina -1
