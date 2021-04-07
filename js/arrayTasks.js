@@ -208,7 +208,55 @@ console.log("");
 // findMeAn([2, 3, 6, 7], 12) => -1
 // findMeAn([2, 3, 6, 7, 4 ,11], 7) => 3
 
-// 9 Parasyti funkcija kuri ima masyva argumentu ir grazina ar masyvo el suma yra lygine ar nelygine
+// sukti cikla per masyva
+// ciklo metu patikrinti ar einama masyvo reiksme yra lygi ieskomam argumentui
+// jeigu lygi tai grazinam index
+// po ciklo jei neradom reiksmes grazinam -1
+
+function findMeAn(arr, needle) {
+  let foundNumber = -1;
+  arr.forEach((number, index) => {
+    // patikrinti ar numbe lygu needle
+    if (number === needle) {
+      console.log(`found ${number} at index ${index}`);
+      foundNumber = index;
+    }
+  });
+  console.log(foundNumber);
+  // incindexOf yra js metodas kuris iesko reiksmes masyve ir grazina pirma indexa arba -1 jei neranda
+  console.log(arr.indexOf(needle));
+  // includes - grazina true jei randa ir false jei ne.
+  console.log(arr.includes(needle));
+}
+findMeAn([2, 3, 6, 7], 123);
+// findMeAn([2, 3, 6, 7, 4, 7], 7);
+// 9 Parasyti funkcija kuri ima masyva argumentu ir grazina ar masyvo el
+// suma yra lygine ar nelygine
+
+// gauti suma
+// patikrinti ar suma yra lygine ar nelygine
+
+function sumEvenOdd(arr) {
+  let total = 0;
+  arr.forEach((value) => {
+    total += value;
+  });
+
+  let sum = arr.reduce((total, value) => {
+    return total + value;
+  }, 0);
+
+  console.log("total", total);
+  console.log("sum", sum);
+
+  if (total % 2 === 0) return "lyginis";
+  return "nelyginis";
+  // terenary operator
+  return total % 2 === 0 ? "lyginis" : "nelyginis";
+}
+console.log("sumEvenOdd([2, 3, 6, 7]);", sumEvenOdd([2, 3, 6, 7]));
+
+// sumEvenOdd([2, 3, 6, 7]);
 
 // 10 Parasyti funkcija kuri ima masyva argumentu ir grazina masyva su paduoto masyvo tipais
 // arrayValuesTypes([1, 2, "null", []])
@@ -216,6 +264,11 @@ console.log("");
 // arrayValuesTypes(["214", true, false, 2, 2.15, [], null])
 // ➞ ["string", "boolean", "boolean", "number", "number", "object", "object"]
 // pasunkintas var
+
+// sukti cikla
+// kiekvienos iteracijos metu patiktinti tipa
+// grazinti tipa i reiksmes vieta
+
 [
   {
     value: 1,
@@ -240,3 +293,14 @@ console.log("");
 // sumFive([1, 5, 20, 30, 4, 9, 18]) ➞ 77
 // sumFive([1, 2, 3, 4]) ➞ 0
 // sumFive([10, 12, 28, 47, 55, 100]) ➞ 252
+
+// 13 parasyti funkicja kuri grazina koks skaicius padavus skaitine reiksme
+// easy 0 - 10
+// skaicius(5) -> 'penki'
+// skaicius(10) -> 'desimt'
+
+// medium 11 - 100
+
+// medium - harder 101 - 1000
+
+// 1001 - 10000 i tt
