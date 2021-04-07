@@ -58,6 +58,12 @@ console.log("itemsHarder.coins po", itemsHarder.coins);
 // isInRange(4, { min: 4, max: 5 }) ➞ true
 // isInRange(4, { min: 6, max: 10 }) ➞ false
 
+// pasitiktinti ar skaicius yra daugiau uz min
+// ir ar jis yra maziau uz max
+// jei taip tai grazinam true
+
+// jei ne grazinam false
+
 // 4obj  isrikiuoti sarasa pagal kaina
 const drinks = [
   { name: "lemonade", price: 50 },
@@ -74,3 +80,23 @@ let studs2 = {
   Student_2: "Becky",
   Student_3: "John",
 }; // ➞ ["Becky", "John", "Steve"]
+
+// 6 Parasyti funkcija kuri grazina kiek puslapiu galima atspausdinti kol pasibaigs
+// dazai kazkuriai is spalvu kaseciu
+inkLevels({
+  cyan: 23,
+  magenta: 12,
+  yellow: 10,
+}); // ➞ 10
+
+inkLevels({
+  cyan: 432,
+  magenta: 543,
+  yellow: 777,
+}); //  ➞ 432
+
+inkLevels({
+  cyan: 700,
+  magenta: 700,
+  yellow: 0,
+}); //  ➞ 0
