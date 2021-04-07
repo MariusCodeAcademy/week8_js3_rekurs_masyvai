@@ -190,6 +190,7 @@ function arrToString(arr) {
 
   // reduce
   stringFromAray = arr.reduce((finalString, value) => finalString + value, "");
+
   return stringFromAray;
   // easy way
   //   return arr.join("");
@@ -289,10 +290,47 @@ console.log("sumEvenOdd([2, 3, 6, 7]);", sumEvenOdd([2, 3, 6, 7]));
 // rangeOfNum(5, 9) ➞ [6, 7, 8]
 // rangeOfNum(2, 11) ➞ [3, 4, 5, 6, 7, 8, 9, 10]
 
+// sukurti skaiciu seka 0 - 10
+// sukurti skaiciu seka -5 - 15
+// sukurti skaiciu seka 5 - 9
+// padaryti skaiciu sekos pradiza ir pabaiga dinaminem
+
+function rangeOfNum(nuo, iki) {
+  console.log("rangeOfNum");
+  // console.log("0");
+  // console.log("1");
+  // console.log("2");
+  // sukurti masyva
+  let range = [];
+  // i masyva sudeti reiksmes
+  // range.push(0);
+  // range.push(1);
+  // range.push(2);
+
+  for (let index = nuo + 1; index < iki; index++) {
+    // console.log(index);
+    range.push(index);
+  }
+
+  console.log("range", range);
+}
+rangeOfNum(5, 9);
+rangeOfNum(10, -11);
+
 // 12 Parasyti funkcija kuri pasiima argumentu masyva ir susumuoja didesnes nei 5 reiksmes
 // sumFive([1, 5, 20, 30, 4, 9, 18]) ➞ 77
 // sumFive([1, 2, 3, 4]) ➞ 0
 // sumFive([10, 12, 28, 47, 55, 100]) ➞ 252
+
+// sukam cikla
+// jei ienama reiksme daugiau uz 5 mes ja sumuojam
+// jei ne praleidziam
+// grazinam suma
+
+//2 budas
+// isfiltruoti masyva jame paliekan reiksmes didesnes uz 5
+// susumuoti likusi masyva
+//grazinti rez
 
 // 13 parasyti funkicja kuri grazina koks skaicius padavus skaitine reiksme
 // easy 0 - 10
@@ -304,3 +342,4 @@ console.log("sumEvenOdd([2, 3, 6, 7]);", sumEvenOdd([2, 3, 6, 7]));
 // medium - harder 101 - 1000
 
 // 1001 - 10000 i tt
+arr.reduce((acc, cuer) => {}, 0);
