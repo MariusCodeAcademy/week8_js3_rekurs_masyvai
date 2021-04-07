@@ -376,7 +376,19 @@ sumFiveHof([1, 5, 20, 30, 4, 9, 18]);
 // easy 0 - 10
 // skaicius(5) -> 'penki'
 // skaicius(10) -> 'desimt'
+function skaicius(num) {
+  let skaiciai = ["nulis", "vienas", "du", "trys", "keturi", "penki", "šeši", "septyni", "aštuoni", "devyni", "dešimt"];
 
+  // console.log("skaiciai", skaiciai);
+  console.log(skaiciai[num]);
+  return skaiciai[num];
+}
+skaicius(5);
+skaicius(7);
+
+console.log(`musu masyve yra skaiciai ${skaicius(5)}, ${skaicius(7)}, ${skaicius(9)}`);
+
+// medium 11 - 30
 // medium 11 - 100
 
 // medium - harder 101 - 1000

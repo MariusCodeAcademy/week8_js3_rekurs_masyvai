@@ -6,6 +6,25 @@ let box1 = { width: 2, length: 5, height: 1 }; // 10
 let box2 = { width: 4, length: 2, height: 2 }; // ➞ 16
 let box3 = { width: 2, length: 3, height: 5 }; // ➞ 30
 
+// gauti visus skaicius
+// gauti ploti, gauti ilgi gauti auksti
+// sudauginti
+// grazinti rez
+
+function measureVolume(obj) {
+  console.log("obj", obj);
+  //   let width = obj.width;
+  //   let length = obj.length;
+  //   let height = obj.height;
+  let volume = obj.width * obj.length * obj.height;
+
+  let { width, length, height } = obj;
+  volume = width * length * height;
+  console.log("volume", volume);
+}
+measureVolume(box1);
+measureVolume(box2);
+
 // 2obj nukopijuoti masyva / patikrinti ar veikia pakeitus kopijos reiksme
 let items = { piano: 100, tv: 50 };
 let itemsHarder = { piano: 100, tv: 50, coins: { quarter: 4, penny: 5 } };
@@ -27,3 +46,8 @@ const drinks = [
 // 5obj Parasyti funkcija kuri gauna studentu objekta ir grazina masyva su studentu vardais
 // isrikiuotais abeceles tvarka
 let studs = [{ student: "Steve" }, { student: "Becky" }, { student: "John" }]; // ➞ ["Becky", "John", "Steve"]
+let studs2 = {
+  Student_1: "Steve",
+  Student_2: "Becky",
+  Student_3: "John",
+}; // ➞ ["Becky", "John", "Steve"]
