@@ -76,6 +76,7 @@ console.log("isInRange(4, { min: 10, max: 5 });", isInRange(4, { min: 10, max: 5
 console.log("isInRange(4, { min: 0, max: 5 });", isInRange(4, { min: 0, max: 5 }));
 
 isInRange(4, { min: 10, max: 5 });
+
 // 4obj  isrikiuoti sarasa pagal kaina
 const drinks = [
   { name: "lemonade", price: 50 },
@@ -95,11 +96,12 @@ let studs2 = {
 
 // 6 Parasyti funkcija kuri grazina kiek puslapiu galima atspausdinti kol pasibaigs
 // dazai kazkuriai is spalvu kaseciu
-// inkLevels({
-//   cyan: 23,
-//   magenta: 12,
-//   yellow: 10,
-// }); // ➞ 10
+let inkLevel1 = {
+  cyan: 23,
+  magenta: 12,
+  yellow: 10,
+};
+// inkLevels(inkLevel1); // ➞ 10
 
 // inkLevels({
 //   cyan: 432,
