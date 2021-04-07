@@ -22,12 +22,35 @@ function measureVolume(obj) {
   volume = width * length * height;
   console.log("volume", volume);
 }
-measureVolume(box1);
-measureVolume(box2);
+// measureVolume(box1);
+// measureVolume(box2);
 
 // 2obj nukopijuoti masyva / patikrinti ar veikia pakeitus kopijos reiksme
 let items = { piano: 100, tv: 50 };
 let itemsHarder = { piano: 100, tv: 50, coins: { quarter: 4, penny: 5 } };
+
+// taip negaunam kopijos o gaunam du kintamuosius rodancius i ta pavia vieta atmintyje
+let itemsCopy = items;
+// seklia kopija - naudoti spread operatoriu
+itemsCopy = { ...items };
+itemsCopy.boardGame = 20;
+console.log("itemsCopy", itemsCopy);
+console.log("items", items);
+
+console.log("itemsHarder pries", itemsHarder);
+console.log("itemsHarder.coins pries", itemsHarder.coins);
+
+// shalow copy - kopijuoja tik viena lygi
+let itemsHarderCopy = { ...itemsHarder };
+// JSON.stringify(itemsHarder) - pavercia objekta i string
+// JSON.parse() - convertuoja JSON formata i js objekta
+let itemsHarderDeepCopy = JSON.parse(JSON.stringify(itemsHarder));
+// console.log("itemsHarderDeepCopy", itemsHarderDeepCopy);
+itemsHarderDeepCopy.coins.quarter = 10;
+
+console.log("itemsHarderDeepCopy", itemsHarderDeepCopy);
+console.log("itemsHarder po", itemsHarder);
+console.log("itemsHarder.coins po", itemsHarder.coins);
 
 // 3obj parasyti funkcija kuri patikrina ar verte yra tarp duotu min ir max reiksmiu
 // funkcija grazina boolean reiksme true arba false
