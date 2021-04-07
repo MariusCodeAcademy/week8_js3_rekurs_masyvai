@@ -327,10 +327,50 @@ rangeOfNum(10, -11);
 // jei ne praleidziam
 // grazinam suma
 
+function sumFiveOlder(arr) {
+  let total = 0;
+  // total += 1;
+  // total += 5;
+  arr.forEach((num) => {
+    // patikrinti ar num yra daugiau uz 5
+    if (num > 5) {
+      total += num;
+    }
+  });
+  console.log("total", total);
+}
+// sumFiveOlder([1, 5, 20, 30, 4, 9, 18]);
+
 //2 budas
 // isfiltruoti masyva jame paliekan reiksmes didesnes uz 5
 // susumuoti likusi masyva
 //grazinti rez
+console.clear();
+function sumFiveHof(arr) {
+  let aboveFive = arr.filter((num) => num > 5);
+
+  let sumAvbove = aboveFive.reduce((total, num) => total + num, 0);
+
+  // methods chaining
+  let combineBoth = arr.filter((num) => num > 5).reduce((total, num) => total + num, 0);
+
+  // reduce only method
+  let reduceOnly = arr.reduce((total, num) => {
+    if (num > 5) {
+      return total + num;
+    } else {
+      return total;
+    }
+  }, 0);
+
+  console.log("aboveFive", aboveFive);
+  console.log("sumAvbove", sumAvbove);
+  console.log("combineBoth", combineBoth);
+  console.log("reduceOnly", reduceOnly);
+}
+console.log("[1, 5, 20, 30, 4, 9, 18]");
+
+sumFiveHof([1, 5, 20, 30, 4, 9, 18]);
 
 // 13 parasyti funkicja kuri grazina koks skaicius padavus skaitine reiksme
 // easy 0 - 10
@@ -342,4 +382,4 @@ rangeOfNum(10, -11);
 // medium - harder 101 - 1000
 
 // 1001 - 10000 i tt
-arr.reduce((acc, cuer) => {}, 0);
+// arr.reduce((acc, cuer) => {}, 0);

@@ -26,8 +26,4 @@ const drinks = [
 
 // 5obj Parasyti funkcija kuri gauna studentu objekta ir grazina masyva su studentu vardais
 // isrikiuotais abeceles tvarka
-let studs = {
-  "Student 1": "Steve",
-  "Student 2": "Becky",
-  "Student 3": "John",
-}; // ➞ ["Becky", "John", "Steve"]
+let studs = [{ student: "Steve" }, { student: "Becky" }, { student: "John" }]; // ➞ ["Becky", "John", "Steve"]
