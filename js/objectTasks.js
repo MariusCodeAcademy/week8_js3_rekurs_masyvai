@@ -174,6 +174,17 @@ let preke = {
 
 // 7obj parasyti funkicja kuri grazina is paduoto objekto visus raktus (keys)
 // masyvo pavidalu
+console.clear();
+function getObjKeys(obj) {
+  let keysArr = [];
+  for (let raktas in obj) {
+    // console.log(raktas);
+    keysArr.push(raktas);
+  }
+  console.log("keysArr", keysArr);
+  return keysArr;
+}
+getObjKeys(preke);
 
 // 8obj parasyti funkicja kuri grazina is paduoto objekto visas vertes
 // masyvo pavidalu

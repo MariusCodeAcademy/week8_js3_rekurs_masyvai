@@ -116,3 +116,23 @@ prekeInfo(5); // > objekta kurio id yra 5 + kategorijos pavadinima
 // 2 uzd sukurti funkcija kuri grazina visas prekias pigesnias uz uzduota reiksme
 
 getPrekesLessThan(50);
+
+// 3. Parasyti funkcija kuri grazina prekes, kuriu siuntimas kainuoja 2.99
+getTwooNineNinePrekes(); //
+
+// 4. parasyti funkcija kuriai padavus kategorija kaip argumenta ji grazina
+// tik prekias priklausancias tai kategorijiai
+// jei tokios kategorijos nera turetu pranesti vartotojui
+getPreskesInCategory("jewelery");
+
+// 5. Parasyti funkcija kuri grazina masyva su objektais kuriame su prekes kategorija
+// ir kiekis
+// pvz
+// [{
+//   cat: "men clothing",
+//   quantity: 3,
+// },
+// {
+//   cat: "jewelery",
+//   quantity: 2,
+// },...]
