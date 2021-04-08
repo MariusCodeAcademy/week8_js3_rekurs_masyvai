@@ -76,15 +76,27 @@ console.log("isInRange(4, { min: 10, max: 5 });", isInRange(4, { min: 10, max: 5
 console.log("isInRange(4, { min: 0, max: 5 });", isInRange(4, { min: 0, max: 5 }));
 
 isInRange(4, { min: 10, max: 5 });
-
+console.clear();
 // 4obj  isrikiuoti sarasa pagal kaina
 const drinks = [
-  { name: "lemonade", price: 50 },
+  { name: "aemonade", price: 50 },
   { name: "lime", price: 10 },
-  { name: "juice", price: 15 },
+  { name: "zuice", price: 15 },
   { name: "orange", price: 25 },
 ];
 
+console.table(drinks);
+drinks.sort((a, b) => {
+  return a.price - b.price;
+});
+console.table(drinks);
+
+// isrikiuoti pagal name
+drinks.sort((a, b) => {
+  return a.name < b.name ? -1 : 1;
+});
+console.table(drinks);
+console.clear();
 // 5obj Parasyti funkcija kuri gauna studentu objekta ir grazina masyva su studentu vardais
 // isrikiuotais abeceles tvarka
 let studs = [{ student: "Steve" }, { student: "Becky" }, { student: "John" }]; // ➞ ["Becky", "John", "Steve"]
@@ -93,6 +105,17 @@ let studs2 = {
   Student_2: "Becky",
   Student_3: "John",
 }; // ➞ ["Becky", "John", "Steve"]
+
+console.log("studs", studs);
+console.log("studs2", studs2);
+
+function sortNamesMap(arr) {
+  let valueOnly = arr.map((stud) => stud.student).sort();
+  // valueOnly.sort();
+  console.log("valueOnly", valueOnly);
+  return valueOnly;
+}
+sortNamesMap(studs);
 
 // 6 Parasyti funkcija kuri grazina kiek puslapiu galima atspausdinti kol pasibaigs
 // dazai kazkuriai is spalvu kaseciu
@@ -114,3 +137,32 @@ let inkLevel1 = {
 //   magenta: 700,
 //   yellow: 0,
 // }); //  ➞ 0
+
+let preke = {
+  id: 1,
+  title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+  price: 109.95,
+  category: "men clothing",
+  image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+};
+
+// 7obj parasyti funkicja kuri grazina is paduoto objekto visus raktus (keys)
+// masyvo pavidalu
+
+// 8obj parasyti funkicja kuri grazina is paduoto objekto visas vertes
+// masyvo pavidalu
+
+// 9obj parasyti funkcija kuri paima objekta ir grazina masyvu masyvo pavidalu objekta
+// toArray({ a: 1, b: 2 }) ➞ [["a", 1], ["b", 2]]
+// toArray({ shrimp: 15, tots: 12 }) ➞ [["shrimp", 15], ["tots", 12]]
+// toArray({}) ➞ []
+
+//10obj parasyti funkcijakuri suskaiciuoja ir grazina epitetus gautus objekto pavidalu
+// totalAmountAdjectives({ a: "moron" }) ➞ 1
+// totalAmountAdjectives({ a: "idiot", b: "idiot", c: "idiot" }) ➞ 3
+// totalAmountAdjectives({ a: "moron", b: "scumbag", c: "moron", d: "dirtbag" }) ➞ 4
+
+// 11obj parasyti funkcija nustatyti ar objektas turi nurodyta key reiksme
+// hasKey({ a: 44, b: 45, c: 46 }, "d") ➞ false
+// hasKey({ craves: true, midnight: true, snack: true }, "morning") ➞ false
+// hasKey({ pot: 1, tot: 2, not: 3 }, "not") ➞ true
