@@ -115,7 +115,17 @@ function sortNamesMap(arr) {
   console.log("valueOnly", valueOnly);
   return valueOnly;
 }
-sortNamesMap(studs);
+// sortNamesMap(studs);
+
+function sortNamesIn(myObj) {
+  let names = [];
+  for (let key in myObj) {
+    names.push(myObj[key]);
+  }
+  names.sort();
+  console.log("names", names);
+}
+sortNamesIn(studs2);
 
 // 6 Parasyti funkcija kuri grazina kiek puslapiu galima atspausdinti kol pasibaigs
 // dazai kazkuriai is spalvu kaseciu
@@ -126,17 +136,33 @@ let inkLevel1 = {
 };
 // inkLevels(inkLevel1); // ➞ 10
 
-// inkLevels({
-//   cyan: 432,
-//   magenta: 543,
-//   yellow: 777,
-// }); //  ➞ 432
+// psiaudo kodas
+// norim gauti visu triju spalvu likusiu puslapiu skaicius
 
-// inkLevels({
-//   cyan: 700,
-//   magenta: 700,
-//   yellow: 0,
-// }); //  ➞ 0
+// tas skaiciu kuris yra maziausias tiek lapu mes galesim atspausdinti
+
+// Math.min(n1, n2, n3 ...) grazina pati maziausia skaiciu
+
+function inkLevels({ cyan, magenta, yellow }) {
+  // let pirmaSpalvaLikutis = cartrige.cyan;
+  // let minPsl = Math.min(cartrige.cyan, cartrige.magenta, cartrige.yellow);
+  let minPsl = Math.min(cyan, magenta, yellow);
+  console.log("minPsl", minPsl);
+  return minPsl;
+}
+inkLevels(inkLevel1);
+
+inkLevels({
+  cyan: 432,
+  magenta: 543,
+  yellow: 777,
+}); //  ➞ 432
+
+inkLevels({
+  cyan: 700,
+  magenta: 700,
+  yellow: 0,
+}); //  ➞ 0
 
 let preke = {
   id: 1,
