@@ -118,21 +118,36 @@ let cart = [
   },
 ];
 
+console.table(prekes);
+
 // 1 uzd parasyti funkcija kuri grazina preke pagal jos ID
 
-prekeInfo(5); // > objekta kurio id yra 5 + kategorijos pavadinima
+// prekeInfo(5); // > objekta kurio id yra 5 + kategorijos pavadinima
+function prekeInfo(ieskomasId) {
+  let radauPreke = null;
+  prekes.forEach((prekesObj) => {
+    if (prekesObj.id === ieskomasId) {
+      // console.log("radau");
+      radauPreke = prekesObj;
+    }
+  });
+  console.log("radauPreke", radauPreke);
+
+  return radauPreke;
+}
+console.log(prekeInfo(7));
 
 // 2 uzd sukurti funkcija kuri grazina visas prekias pigesnias uz uzduota reiksme
 
-getPrekesLessThan(50);
+// getPrekesLessThan(50);
 
 // 3. Parasyti funkcija kuri grazina prekes, kuriu siuntimas kainuoja 2.99
-getTwooNineNinePrekes(); //
+// getTwooNineNinePrekes(); //
 
 // 4. parasyti funkcija kuriai padavus kategorija kaip argumenta ji grazina
 // tik prekias priklausancias tai kategorijiai
 // jei tokios kategorijos nera turetu pranesti vartotojui
-getPreskesInCategory("jewelery");
+// getPreskesInCategory("jewelery");
 
 // 5. Parasyti funkcija kuri grazina masyva su objektais kuriame su prekes kategorija
 // ir kiekis
