@@ -188,11 +188,32 @@ getObjKeys(preke);
 
 // 8obj parasyti funkicja kuri grazina is paduoto objekto visas vertes
 // masyvo pavidalu
+function getObjValues(obj) {
+  let valuesArr = [];
+  for (let key in obj) {
+    valuesArr.push(obj[key]);
+  }
+  return valuesArr;
+}
+console.log("getObjValues(preke)", getObjValues(preke));
 
 // 9obj parasyti funkcija kuri paima objekta ir grazina masyvu masyvo pavidalu objekta
 // toArray({ a: 1, b: 2 }) ➞ [["a", 1], ["b", 2]]
-// toArray({ shrimp: 15, tots: 12 }) ➞ [["shrimp", 15], ["tots", 12]]
-// toArray({}) ➞ []
+toArray({ shrimp: 15, tots: 12 }); // ➞ [["shrimp", 15], ["tots", 12]]
+toArray({}); // ➞ []
+//                          0   1
+toArray({ a: 1, b: 2 }); // [["a", 1], ["b", 2]]
+
+function toArray(obj) {
+  let mainOuterArr = [];
+  for (let key in obj) {
+    // sukurti nauja masyva ir jame turi buri key ir value
+    // let currentArr = [key, obj[key]]
+    mainOuterArr.push([key, obj[key]]);
+  }
+  console.log("mainOuterArr", mainOuterArr);
+}
+toArray(preke);
 
 //10obj parasyti funkcijakuri suskaiciuoja ir grazina epitetus gautus objekto pavidalu
 // totalAmountAdjectives({ a: "moron" }) ➞ 1
