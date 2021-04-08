@@ -215,12 +215,29 @@ function toArray(obj) {
 }
 toArray(preke);
 
-//10obj parasyti funkcijakuri suskaiciuoja ir grazina epitetus gautus objekto pavidalu
+// 10obj parasyti funkcijakuri suskaiciuoja ir grazina epitetus gautus objekto pavidalu
 // totalAmountAdjectives({ a: "moron" }) ➞ 1
 // totalAmountAdjectives({ a: "idiot", b: "idiot", c: "idiot" }) ➞ 3
 // totalAmountAdjectives({ a: "moron", b: "scumbag", c: "moron", d: "dirtbag" }) ➞ 4
+
+// suskaiciuojam ir grazinam kiek savybiu turi obj
+function countNiceWords(obj) {
+  let count = 0;
+  for (let key in obj) {
+    count++;
+  }
+  Object.keys(obj).length;
+  console.log("count", count);
+}
+countNiceWords({ a: "idiot", b: "idiot", c: "idiot" });
+countNiceWords({ a: "idiot", b: "idiot", c: "idiot", d: "moron", e: "scumbag", g: "moron" });
 
 // 11obj parasyti funkcija nustatyti ar objektas turi nurodyta key reiksme
 // hasKey({ a: 44, b: 45, c: 46 }, "d") ➞ false
 // hasKey({ craves: true, midnight: true, snack: true }, "morning") ➞ false
 // hasKey({ pot: 1, tot: 2, not: 3 }, "not") ➞ true
+
+// sukam cikla
+// tikrinam ar key yra lygus musu argumentui
+// jei taip tai grazim true
+// jei prasukus cikla neradom reiksmes tai grazinam false
