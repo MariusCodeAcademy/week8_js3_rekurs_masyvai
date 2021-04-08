@@ -236,8 +236,23 @@ countNiceWords({ a: "idiot", b: "idiot", c: "idiot", d: "moron", e: "scumbag", g
 // hasKey({ a: 44, b: 45, c: 46 }, "d") ➞ false
 // hasKey({ craves: true, midnight: true, snack: true }, "morning") ➞ false
 // hasKey({ pot: 1, tot: 2, not: 3 }, "not") ➞ true
+function hasKey(obj, needle) {
+  // sukam cikla
+  for (let key in obj) {
+    // tikrinam ar key yra lygus musu argumentui
+    if (key === needle) {
+      // jei taip tai grazim true
+      console.log(true);
+      return true;
+    }
+  }
+  // jei prasukus cikla neradom reiksmes tai grazinam false
+  console.log("false");
+  return false;
+}
+hasKey({ a: 44, b: 45, c: 46 }, "b");
 
-// sukam cikla
-// tikrinam ar key yra lygus musu argumentui
-// jei taip tai grazim true
-// jei prasukus cikla neradom reiksmes tai grazinam false
+function why() {
+  // countNiceWords({ a: "idiot", b: "idiot", c: "idiot" });
+  alert("Why god why");
+}

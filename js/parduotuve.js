@@ -109,6 +109,15 @@ let categories = {
   c: "electronics",
 };
 
+let cart = [
+  {
+    id: 1,
+    title: "bla bla bla",
+    price: 100,
+    shipping: 2.99,
+  },
+];
+
 // 1 uzd parasyti funkcija kuri grazina preke pagal jos ID
 
 prekeInfo(5); // > objekta kurio id yra 5 + kategorijos pavadinima
@@ -136,3 +145,8 @@ getPreskesInCategory("jewelery");
 //   cat: "jewelery",
 //   quantity: 2,
 // },...]
+
+// 6 parasyti funkcija kuri perkelia viena prekes vieneta i krepseli.
+// krepselyje is prekes objekto issaugoti tik id: 1, title: "bla bla bla", price: 100, shipping: 2.99,
+
+// 7 parasyti funkcija kuri suskaiciuoja kiek daiktu ir uz kokia suma yra krepselyje
