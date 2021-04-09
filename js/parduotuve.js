@@ -280,6 +280,9 @@ console.table(prekes);
 
 // 7 parasyti funkcija kuri suskaiciuoja kiek daiktu ir uz kokia suma yra krepselyje
 
+// 10 grazinti masyva kuriame yra visos kategorijos esancio prekiu masyve
+// [ a, b, c ]
+
 function render(whatToRender) {
   const where = document.getElementById("cards");
   let cards = whatToRender
@@ -301,3 +304,14 @@ function render(whatToRender) {
   where.innerHTML = cards;
 }
 render(prekes);
+
+// papildomi nesudetingi uzdaviniai
+
+// 1p gauti pirmos ir paskutines prekiu kainu suma
+// 2p atrinkti pacia brangiausia preke
+// 3p surasnti pacia pigiausia preke
+// 4p suransti daugiausia vienetu turincia preke
+// 5p surasti preke su ilgiausiu pavadinimu
+// 6p sukurti pagalbine funkcija kueri paima prekes pavadinima ir sutrumpina iki 10 simboliu ir padeda "..."
+// 7p atrnkti prekias kurios turi bent viena vienera prekiu
+// 8p surasti kurioje kategorijoje yra daugiausia prekiu (sunkesnis)
