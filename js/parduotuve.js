@@ -225,14 +225,42 @@ console.table(cheapShipping, ["title", "price", "shipping"]);
 // jei tokios kategorijos nera turetu pranesti vartotojui
 
 // getPreskesInCategory("jewelery");
+function getPreskesInCategory(kategoryName) {
+  // reikalingas buda paversi kategorijos string i raide
+  // for in cikla ir atrinki raide
+  // debugger;
 
-// reikalingas buda paversi kategorijos string i raide
-// for in cikla ir atrinki raide
+  // catRaide === a, b, c jeigu tokia kategorija radom
+  // catRaide === false, jei neradom tokios kategorijos
 
-// isfiltruoti prekes masyva ir atrinkti tik tas prekias kurios prikausi nurodytai raidei
+  let catRaide = categoryNameToKey(kategoryName);
+  if (catRaide === false) {
+    // console.warn("tokia kategotija nerasta");
+    // sustabdom tolimesni funcijo vygdyma
+    // guard clause
+    return;
+  }
 
-// 5. Parasyti funkcija kuri grazina masyva su objektais kuriame su prekes kategorija
-// ir kiekis
+  // isfiltruoti prekes masyva ir atrinkti tik tas prekias kurios prikausi nurodytai raidei
+  let categorijosPrekes = prekes.filter((prekesObj) => prekesObj.category === catRaide);
+
+  // console.table(categorijosPrekes);
+  return categorijosPrekes;
+}
+// console.clear();
+let jewPrekes = getPreskesInCategory("jewelery");
+// let jew299 = jewPrekes.filter((preke) => preke.shipping === 2.99);
+
+// console.log("jew299", jew299);
+
+// getPreskesInCategory("electronics");
+// getPreskesInCategory("electronic");
+console.clear();
+console.table(prekes);
+
+// 5. Parasyti funkcija kuri grazina masyva su objektais kuriuose yra prekes kategorija ir prekes kiekis
+// sunkesnis // grazinti kategorijos pav ir kiek toje kategorijoje yra prekiu
+
 // pvz
 // [{
 //   cat: "men clothing",
