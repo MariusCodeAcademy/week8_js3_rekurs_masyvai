@@ -126,15 +126,38 @@ console.table(prekes);
 function categoryLetterToName(letter) {
   return categories[letter];
 }
+// noriu issisaugoti gauta reiksme is funkcijos
+let catName = categoryLetterToName("b");
 
-function categoryNameToKey(catName) {
+console.clear();
+function categoryNameToKey(catNameWeSearchFor) {
   // sukti for in cikla per categories obj
+  for (let catLetter in categories) {
+    // console.log("catLetter", catLetter);
+    let kategorijosPavadinimas = categories[catLetter];
+    // console.log("categories[catLetter]", categories[catLetter]);
+    // console.log("catNameWeSearchFor", catNameWeSearchFor);
+    if (kategorijosPavadinimas === catNameWeSearchFor) {
+      // radom kategorija - grazinam raide
+      return catLetter;
+    }
+    // catLetter tai yra key kurio mes ieskom
+    // categories[catLetter] yra string kategorijos pavadinimas
+    // "catName" yra musu argumentu paduotas stringas kuris turi buti lygus  categories[catLetter]
+    // grazinti su return
+  }
+  //jei kodas daeina iki cia tai reiskia neradom kategorijos
+  console.warn(catNameWeSearchFor, " tokios kategorijos nera");
+  return false;
   // tikrinti ar obj reiksme yra lygi catName
   // jei taip tai grazinti reiksme
   // jei prasukus cikla neradom reiksmes
   // pranesam apie klaida ir grazinam false
 }
+let keyOfCat = categoryNameToKey("jewelery");
+console.log("keyOfCat", keyOfCat);
 
+// categoryNameToKey("electronics");
 // 1 uzd parasyti funkcija kuri grazina preke pagal jos ID
 
 // prekeInfo(5); // > objekta kurio id yra 5 + kategorijos pavadinima
