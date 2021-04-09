@@ -127,6 +127,14 @@ function categoryLetterToName(letter) {
   return categories[letter];
 }
 
+function categoryNameToKey(catName) {
+  // sukti for in cikla per categories obj
+  // tikrinti ar obj reiksme yra lygi catName
+  // jei taip tai grazinti reiksme
+  // jei prasukus cikla neradom reiksmes
+  // pranesam apie klaida ir grazinam false
+}
+
 // 1 uzd parasyti funkcija kuri grazina preke pagal jos ID
 
 // prekeInfo(5); // > objekta kurio id yra 5 + kategorijos pavadinima
@@ -172,17 +180,33 @@ function prekeInfoNewer(ieskomasId) {
 
 // 2 uzd sukurti funkcija kuri grazina visas prekias pigesnias uz uzduota reiksme
 // filter metodas
-function getPrekesLessThan(howMuch) {}
+function getPrekesLessThan(howMuch) {
+  let lessThan = prekes.filter((prekesObj) => prekesObj.price < howMuch);
+  console.table(lessThan, ["title", "price"]);
+  // console.log(lessThan);
+  return lessThan;
+}
 
 // getPrekesLessThan(50);
 
 // 3. Parasyti funkcija kuri grazina prekes, kuriu siuntimas kainuoja 2.99
-// getTwooNineNinePrekes(); //
+getTwooNineNinePrekes(); //
+function getTwooNineNinePrekes() {
+  return prekes.filter((prekesObj) => prekesObj.shipping === 2.99);
+}
+let cheapShipping = getTwooNineNinePrekes();
+console.table(cheapShipping, ["title", "price", "shipping"]);
 
 // 4. parasyti funkcija kuriai padavus kategorija kaip argumenta ji grazina
 // tik prekias priklausancias tai kategorijiai
 // jei tokios kategorijos nera turetu pranesti vartotojui
+
 // getPreskesInCategory("jewelery");
+
+// reikalingas buda paversi kategorijos string i raide
+// for in cikla ir atrinki raide
+
+// isfiltruoti prekes masyva ir atrinkti tik tas prekias kurios prikausi nurodytai raidei
 
 // 5. Parasyti funkcija kuri grazina masyva su objektais kuriame su prekes kategorija
 // ir kiekis
@@ -199,4 +223,30 @@ function getPrekesLessThan(howMuch) {}
 // 6 parasyti funkcija kuri perkelia viena prekes vieneta i krepseli.
 // krepselyje is prekes objekto issaugoti tik id: 1, title: "bla bla bla", price: 100, shipping: 2.99,
 
+// 8 Parasyti funkcija kuri grazina kiek is viso yra prekiu pas mus parduotuveje
+
+// 9 Parasyti funkcija kuri grazina uz kokia suma is viso yra prekiu pas mus parduotuveje
+
 // 7 parasyti funkcija kuri suskaiciuoja kiek daiktu ir uz kokia suma yra krepselyje
+
+function render(whatToRender) {
+  const where = document.getElementById("cards");
+  let cards = whatToRender
+    .map((item) => {
+      return `
+    <div class="card" style="width: 18rem">
+          <div class="card-header">Category ${categoryLetterToName(item.category)}</div>
+          <div class="card-body">
+            <h5 class="card-title">${item.title}</h5>
+            
+            <a href="#">Price ${item.price}</a><br />
+            <a class="btn btn-small btn-info" href="#">Quantity ${item.quantity}</a>
+          </div>
+        </div>
+  `;
+    })
+    .join("");
+  // console.log("cards", cards);
+  where.innerHTML = cards;
+}
+render(prekes);
