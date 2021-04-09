@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <title>Document</title>
     <!-- <script src="./js/arrayTasks.js" defer></script> -->
     <!-- <script src="./js/destruct.js" defer></script> -->
@@ -12,8 +18,12 @@
     <script src="./js/parduotuve.js" defer></script>
   </head>
   <body>
-    <h1>Week 8 day 3 Array tasks very easy</h1>
-    <button onclick="why()">Click me</button>
-    <button onclick="prekeInfo(5)">Give me preke 5</button>
+    <div class="container">
+      <h1 class="display-4">Week 8 day 3 Array tasks very easy</h1>
+      <!-- <button class="btn btn-primary" onclick="why()">Click me</button> -->
+      <button class="btn btn-primary" onclick="prekeInfo(5)">Give me preke 5</button>
+      <button class="btn btn-primary" onclick="prekeInfoNewer(5)">Give me preke 5 Filter</button>
+      <button class="btn btn-primary" onclick="getPrekesLessThan(50)">get prekes less than 50</button>
+    </div>
   </body>
 </html>

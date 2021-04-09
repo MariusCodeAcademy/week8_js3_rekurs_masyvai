@@ -109,6 +109,8 @@ let categories = {
   c: "electronics",
 };
 
+console.log("categories", categories);
+
 let cart = [
   {
     id: 1,
@@ -120,6 +122,11 @@ let cart = [
 
 console.table(prekes);
 
+// Helper functions =========================================================
+function categoryLetterToName(letter) {
+  return categories[letter];
+}
+
 // 1 uzd parasyti funkcija kuri grazina preke pagal jos ID
 
 // prekeInfo(5); // > objekta kurio id yra 5 + kategorijos pavadinima
@@ -128,16 +135,44 @@ function prekeInfo(ieskomasId) {
   prekes.forEach((prekesObj) => {
     if (prekesObj.id === ieskomasId) {
       // console.log("radau");
-      radauPreke = prekesObj;
+      radauPreke = { ...prekesObj };
     }
   });
+  // console.log("radauPreke", radauPreke);
+
+  // console.log("radauPreke.category", radauPreke.category); // b
+
+  // panaudojam kategorijos raide kaip rakta ir gaunam kategorijos pavadinima
+  // console.log("categories[radauPreke.category]", categories[radauPreke.category]);
+
+  // irasyti kategorijos pavadinima vietoj raides
+  radauPreke.category = categories[radauPreke.category];
   console.log("radauPreke", radauPreke);
 
   return radauPreke;
 }
-console.log(prekeInfo(7));
+
+function prekeInfoNewer(ieskomasId) {
+  // find - yra labai panasus i filter, tik jis grazina pirma sutikta reiksme o ne masyva.
+  let radauPreke = prekes.find((prekesObj) => prekesObj.id === ieskomasId);
+  // jei prekes neradom tai radauPreke === undefined
+  if (radauPreke === undefined) {
+    console.log("tokios prekes nerasta");
+    return;
+  }
+
+  radauPreke = { ...radauPreke };
+  let catLetter = radauPreke.category;
+  radauPreke.category = categoryLetterToName(catLetter);
+  console.log("radauPreke", radauPreke);
+  return radauPreke;
+}
+
+// console.log(prekeInfo(7));
 
 // 2 uzd sukurti funkcija kuri grazina visas prekias pigesnias uz uzduota reiksme
+// filter metodas
+function getPrekesLessThan(howMuch) {}
 
 // getPrekesLessThan(50);
 
