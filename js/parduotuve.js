@@ -97,7 +97,7 @@ let prekes = [
     price: 109,
     description:
       "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-    category: "c",
+    category: "d",
     quantity: 30,
     shipping: 2.99,
   },
@@ -334,15 +334,22 @@ function addToCart(ieskomasId) {
 
   // po visko mes krepselyje turetumem tureti preke o parduotuveje turetu buti sumazinta vienetu
 }
-addToCart(7);
-addToCart(7);
+// addToCart(7);
+// addToCart(7);
 
-addToCart(5);
+// addToCart(5);
 console.log("cart", cart);
 
 // console.table(prekes);
 
 // 8 Parasyti funkcija kuri grazina kiek is viso yra prekiu pas mus parduotuveje
+
+function howManyItems(arr) {
+  let howMany = arr.reduce((total, prekeObj) => total + prekeObj.quantity, 0);
+  console.log("howMany", howMany);
+  return howMany;
+}
+howManyItems(prekes);
 
 // 9 Parasyti funkcija kuri grazina uz kokia suma is viso yra prekiu pas mus parduotuveje
 
@@ -350,6 +357,27 @@ console.log("cart", cart);
 
 // 10 grazinti masyva kuriame yra visos kategorijos esancio prekiu masyve
 // [ a, b, c ]
+
+// 11 sukurti funkcija Buy() arba Pirkti()
+// funkcija turetu grazinti bendra suma ir isvalyti krepseli
+
+// 12 pataisyti 6 funkcija kad galetume prideti daugiau to paties daikto
+// vienetu.
+
+// 13 Parasyti funkcija kuri grazina stringa kuri padavus i html mes gautume
+// rikiuota sarasa kuriame yra visu prekiu title ir price kaip li el
+/*<ul>
+<li>title price</li>
+<li>title price</li>
+<li>title price</li>
+<li>title price</li>
+</ul> */
+
+//13a grazinti stringa tik tu prekiu kuriu siuntimas kainuoja daugiau nei 2.99
+
+// 14 parasyti funkcija kuri paiesko pagal pirmas 3 title raides
+// ir grazina sarasa kuris atitinka
+// searchTitle('Men')
 
 function render(whatToRender) {
   const where = document.getElementById("cards");
@@ -375,7 +403,7 @@ render(prekes);
 
 // papildomi nesudetingi uzdaviniai
 
-// 1p gauti pirmos ir paskutines prekiu kainu suma
+// 1p gauti pirmos ir paskutines (pgl id) prekiu kainu suma
 // 2p atrinkti pacia brangiausia preke
 // 3p surasnti pacia pigiausia preke
 // 4p suransti daugiausia vienetu turincia preke

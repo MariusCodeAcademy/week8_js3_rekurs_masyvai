@@ -151,6 +151,7 @@ function sumArrFor(arr) {
 sumArrFor([1, 2, 3, [5, 6]]);
 
 function sumMuliDArr(arr) {
+  debugger;
   let total = 0;
   arr.forEach((el) => {
     if (typeof el === "number") {
@@ -162,7 +163,7 @@ function sumMuliDArr(arr) {
   });
   return total;
 }
-console.log("sumMuliDArr([1, 2, 3, [5, 6]])", sumMuliDArr([1, [1, 2], 3, [5, 6, [1, 3]]]));
+console.log("sumMuliDArr([1, 2, 3, [5, 6]])", sumMuliDArr([1, 2, [5, 6]]));
 
 function sumArr2d(arr) {
   // base case
