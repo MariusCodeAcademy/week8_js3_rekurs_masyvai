@@ -274,6 +274,74 @@ console.table(prekes);
 // 6 parasyti funkcija kuri perkelia viena prekes vieneta i krepseli.
 // krepselyje is prekes objekto issaugoti tik id: 1, title: "bla bla bla", price: 100, shipping: 2.99,
 
+function addToCart(ieskomasId) {
+  // surasti preke pagal id
+  let findPreke = prekes.find((prekeObj) => prekeObj.id === ieskomasId);
+
+  // pasitikrinti ar radom
+  // findPreke jei radom yra {}
+  // findPreke jei neradom === undefinde => false
+  if (!findPreke) {
+    console.warn(ieskomasId, "prekes su tokiu Id nerasrta");
+    return;
+  }
+  console.log("findPreke", findPreke);
+
+  // suradus norim patikrinti ar yra tokiu prekiu like
+  if (findPreke.quantity <= 0) {
+    console.warn("kiekis nepakankamas");
+    return;
+  }
+  // jei yra tai norim sumazinti kieki vienetu ir isideti i krepseli
+  // pakeitus bet ka findPreke objekta pasikeicia ir orginalas
+  findPreke.quantity--;
+
+  // idedam i krepseli paprastai
+  let prekeIKrepseli = {
+    id: findPreke.id,
+    title: findPreke.title,
+    price: findPreke.price,
+    shipping: findPreke.shipping,
+    quantity: 1,
+  };
+
+  // tam kad nekartoti findPreke.xxx galima naudoti object destructuring
+  // id: id
+  let { id, title, price, shipping } = findPreke;
+  let prekeIKrepseliDestruc = {
+    id: id,
+    title: title,
+    price: price,
+    shipping: shipping,
+    quantity: 1,
+  };
+  // jei key yra toks pat kaip value kintamasis mes galim nerasyti value
+  let prekeIKrepseliDestrucEqualKeyAndValue = {
+    id,
+    title,
+    price,
+    shipping,
+    quantity: 1,
+  };
+
+  // pries dedant preke i krepseli reikia pasitikrinti ar tokia preke jau yra krepselyje
+  // jei yra padidinti jos kieki vienetu uzuot kele ja is naujo
+  // TODO:
+  console.log("prekeIKrepseliDestrucEqualKeyAndValue", prekeIKrepseliDestrucEqualKeyAndValue);
+
+  console.log("prekeIKrepseli", prekeIKrepseli);
+  cart.push(prekeIKrepseli);
+
+  // po visko mes krepselyje turetumem tureti preke o parduotuveje turetu buti sumazinta vienetu
+}
+addToCart(7);
+addToCart(7);
+
+addToCart(5);
+console.log("cart", cart);
+
+// console.table(prekes);
+
 // 8 Parasyti funkcija kuri grazina kiek is viso yra prekiu pas mus parduotuveje
 
 // 9 Parasyti funkcija kuri grazina uz kokia suma is viso yra prekiu pas mus parduotuveje
