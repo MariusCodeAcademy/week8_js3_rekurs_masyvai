@@ -101,7 +101,19 @@ function sumArr(arr) {
   return total;
 }
 let sum = sumArr([1, 2, 3, 4]);
-console.log({ sum });
+// console.log({ sum });
+
+// kitas budas su total
+function sumArrWithTotal(arr, total = 0) {
+  // base case
+  if (arr.length === 0) return total;
+
+  let pirmasEl = arr[0];
+  let likutis = arr.slice(1);
+  return sumArrWithTotal(likutis, total + pirmasEl);
+}
+let sumTotal = sumArrWithTotal([1, 2, 3, 4]);
+// console.log({ sumTotal });
 
 // 3 rek
 // parasyti rekursiskai paieskos masyve funkcija
@@ -115,4 +127,53 @@ console.log({ sum });
 // 4.2 [1, 2, 3, [5, 6]] sumArrFor([1, 2, 3, [5, 6]])
 // 4.3 [1, 2, 3, [5, 6, [7, 8]]] sumArrFor([1, 2, 3, [5, 6, [7, 8]]])
 [1, 2, 3, [5, 6, [7, 8]]];
+
+// 4.2 [1, 2, 3, [5, 6]] sumArrFor([1, 2, 3, [5, 6]])
+function sumArrFor(arr) {
+  let total = 0;
+  let innerTotal = 0;
+  //   debugger;
+  arr.forEach((num) => {
+    if (typeof num === "number") {
+      total += num;
+    } else {
+      // num yra masyvas su reiksmem
+      // num [5, 6]
+      num.forEach((innerArrVal) => {
+        innerTotal += innerArrVal;
+      });
+      total += innerTotal;
+    }
+  });
+  console.log({ total });
+  return total;
+}
+sumArrFor([1, 2, 3, [5, 6]]);
+
+function sumMuliDArr(arr) {
+  let total = 0;
+  arr.forEach((el) => {
+    if (typeof el === "number") {
+      total += el;
+    } else {
+      // kai el yra masyvas
+      total += sumMuliDArr(el);
+    }
+  });
+  return total;
+}
+console.log("sumMuliDArr([1, 2, 3, [5, 6]])", sumMuliDArr([1, [1, 2], 3, [5, 6, [1, 3]]]));
+
+function sumArr2d(arr) {
+  // base case
+  if (arr.length === 0) return 0;
+
+  let pirmasEl = arr[0];
+  let likutis = arr.slice(1);
+  let total = pirmasEl + sumArr(likutis);
+  return total;
+}
+let sum2d = sumArr2d([1, 2, 3, [5, 6]]);
+console.log(sum2d);
+
 // 5 uzd atlikti 4 uzd rekursiskai
